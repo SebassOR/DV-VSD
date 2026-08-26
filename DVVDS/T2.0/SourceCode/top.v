@@ -1,8 +1,8 @@
 module top (
     input [3:0] A_in,        
-    input Disable,          
-    input clk,  
+    input Disable,           
     input reset_n,  
+	 input clk,
     input [3:0] B_in,
     input [2:0]selector,      
 
@@ -33,7 +33,7 @@ module top (
     flip_flop M1 (
         .D_in(A_in),
         .enable(~Disable),
-        .clk(clock),
+        .clock(clk),
         .reset_n(reset_n),
         .Q(Q_A)
     );
@@ -41,7 +41,7 @@ module top (
     flip_flop M2 (
         .D_in(B_in),
         .enable(enable),
-        .clock(clock),
+        .clock(clk),
         .reset_n(reset_n),
         .Q(Q_B)
     );

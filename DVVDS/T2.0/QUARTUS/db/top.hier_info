@@ -5,8 +5,8 @@ A_in[2] => A_in[2].IN1
 A_in[3] => A_in[3].IN1
 Disable => enable.IN1
 Disable => _.IN1
-clk => ~NO_FANOUT~
 reset_n => reset_n.IN2
+clk => clk.IN2
 B_in[0] => B_in[0].IN1
 B_in[1] => B_in[1].IN1
 B_in[2] => B_in[2].IN1
@@ -14,10 +14,10 @@ B_in[3] => B_in[3].IN1
 selector[0] => selector[0].IN1
 selector[1] => selector[1].IN1
 selector[2] => selector[2].IN1
-Result[0] <= MUX8A1:M4.Y
-Result[1] <= MUX8A1:M4.Y
-Result[2] <= MUX8A1:M4.Y
-Result[3] <= MUX8A1:M4.Y
+Result[0] << MUX8A1:M4.Y
+Result[1] << MUX8A1:M4.Y
+Result[2] << MUX8A1:M4.Y
+Result[3] << MUX8A1:M4.Y
 
 
 |top|flip_flop:M1

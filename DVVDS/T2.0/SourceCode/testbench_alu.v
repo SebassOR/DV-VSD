@@ -24,19 +24,20 @@ module testbench_alu;
         .Disable(disable_reg)
     );
 
+    //mi codigo de estudiante es 745984 usando la calculadora, en binario es 1011 0110 0010 0000 0000
     //estimulo
     initial begin
         @(negedge clk);
         reset = 1'b0;      
+//casos
+        //mul sel 7
+        @(negedge clk); a = 4'b0000; b = 4'b0000; sela = 3'b111;
+        @(negedge clk); 
+        //neg sel 6
+        @(negedge clk); a = 4'b1011; b = 4'b0000; sela = 3'b101;
+        @(negedge clk);
 
-        @(negedge clk); sela = 3'b000; // AND
-        @(negedge clk); sela = 3'b001; // OR
-        @(negedge clk); sela = 3'b010; // NOT
-        @(negedge clk); sela = 3'b011; // XOR
-        @(negedge clk); sela = 3'b100; // ADD
-        @(negedge clk); sela = 3'b101; // SUB
-        @(negedge clk); sela = 3'b110; // NEG
-        @(negedge clk); sela = 3'b111; // MUL
+
     end
 
 endmodule

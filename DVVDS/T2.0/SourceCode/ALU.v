@@ -1,68 +1,25 @@
-module Top (
-    input        [3:0] A_in,
-    input               Disable,
-    input               clock,
-    input               reset_n,
-    input        [3:0] B_in,
-    input        [2:0] selector,
-
-    output       [3:0] Result
+module ALU(
+input [3:0]A,
+input [3:0]B,
+output reg [3:0] AND,
+output reg [3:0] OR,
+output reg [3:0] ALT,
+output reg [3:0] XOR,
+output reg [3:0] ADD,
+output reg [3:0] SUB,
+output reg [3:0] NEG,
+output reg [3:0] MUL
 );
 
-    wire [3:0] Q_A;
-    wire [3:0] Q_B;
-    wire [3:0] AND_w; // A & B
-    wire [3:0] OR_w;  // A | B
-    wire [3:0] NOT_w; // ~A
-    wire [3:0] XOR_w; // A ^ B
-    wire [3:0] ADD_w; // A + B
-    wire [3:0] SUB_w; // A - B
-    wire [3:0] NEG_w; // -A
-    wire [3:0] MUL_w; // A * B
-
-    wire enable;
-    assign enable = ~Disable;
-
-    flip_flop M1 (
-        .D_in(A_in),
-        .enable(enable),
-        .clock(clock),
-        .reset_n(reset_n),
-        .Q(Q_A)
-    );
-
-    flip_flop M2 (
-        .D_in(B_in),
-        .enable(enable),
-        .clock(clock),
-        .reset_n(reset_n),
-        .Q(Q_B)
-    );
-
-    ALU M3 (
-        .A(Q_A),
-        .B(Q_B),
-        .AND(AND_w),
-        .OR(OR_w),
-        .ALT(NOT_w),
-        .XOR(XOR_w),
-        .ADD(ADD_w),
-        .SUB(SUB_w),
-        .NEG(NEG_w),
-        .MUL(MUL_w)
-    );
-
-    MUX8A1 M4 (
-        .I0(AND_w),
-        .I1(OR_w),
-        .I2(NOT_w),
-        .I3(XOR_w),
-        .I4(ADD_w),
-        .I5(SUB_w),
-        .I6(NEG_w),
-        .I7(MUL_w),
-        .S(selector),
-        .Y(Result)
-    );
-
+// Siempre que se tenga un cambio en las entradas, se calcula todo y se tienen las salidas.
+always@(*) begin
+    AND = A & B;       // AND
+    OR  = A | B;       // OR
+    ALT =~A    ;       // Negado
+    XOR = A ^ B;       // XOR
+    ADD = A + B;       // ADD
+    SUB = A - B;       // SUB
+    NEG =~A + 4'b0001; // Cambio de simbolo
+    MUL = A * B;       // Multiplicacion
+end
 endmodule

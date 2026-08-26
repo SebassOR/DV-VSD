@@ -31,10 +31,10 @@ module top (
     //assign selector = 3'b101; assign A_in = 4'b1011; assign B_in = 4'b0000;
 
     //Caso NEG: -0010 = 1110
-    //assign selector = 3'b110; assign A_in = 4'b0010; assign B_in = 4'b0000;
+    assign selector = 3'b110; assign A_in = 4'b0010; assign B_in = 4'b0000;
 
     //Caso MUL: 0000 * 0000 = 0000
-    assign selector = 3'b111; assign A_in = 4'b0000; assign B_in = 4'b0000;
+    //assign selector = 3'b111; assign A_in = 4'b0000; assign B_in = 4'b0000;
 
 		//en esta parte deje el reset y el disable para los flipflops porque mi tarjeta me daba bronca un boton.
     wire [3:0] Q_A, Q_B;

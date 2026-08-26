@@ -1,5 +1,5 @@
 Analysis & Synthesis report for top
-Wed Aug 26 13:52:03 2026
+Wed Aug 26 14:04:50 2026
 Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
 
 
@@ -13,15 +13,14 @@ Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Analysis & Synthesis DSP Block Usage Summary
-  9. Registers Removed During Synthesis
- 10. General Register Statistics
- 11. Port Connectivity Checks: "MUX8A1:M4"
- 12. Port Connectivity Checks: "flip_flop:M2"
- 13. Port Connectivity Checks: "flip_flop:M1"
- 14. Post-Synthesis Netlist Statistics for Top Partition
- 15. Elapsed Time Per Partition
- 16. Analysis & Synthesis Messages
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Port Connectivity Checks: "MUX8A1:M4"
+ 11. Port Connectivity Checks: "flip_flop:M2"
+ 12. Port Connectivity Checks: "flip_flop:M1"
+ 13. Post-Synthesis Netlist Statistics for Top Partition
+ 14. Elapsed Time Per Partition
+ 15. Analysis & Synthesis Messages
 
 
 
@@ -48,7 +47,7 @@ on the Quartus Prime software download page.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +---------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed Aug 26 13:52:03 2026           ;
+; Analysis & Synthesis Status     ; Successful - Wed Aug 26 14:04:50 2026           ;
 ; Quartus Prime Version           ; 25.1std.0 Build 1129 10/21/2025 SC Lite Edition ;
 ; Revision Name                   ; top                                             ;
 ; Top-level Entity Name           ; top                                             ;
@@ -58,7 +57,7 @@ on the Quartus Prime software download page.
 ; Total pins                      ; 6                                               ;
 ; Total virtual pins              ; 0                                               ;
 ; Total block memory bits         ; 0                                               ;
-; Total DSP Blocks                ; 1                                               ;
+; Total DSP Blocks                ; 0                                               ;
 ; Total HSSI RX PCSs              ; 0                                               ;
 ; Total HSSI PMA RX Deserializers ; 0                                               ;
 ; Total HSSI TX PCSs              ; 0                                               ;
@@ -184,31 +183,31 @@ on the Quartus Prime software download page.
 +----------------------------------+-----------------+------------------------+----------------------------------------------------------------+---------+
 
 
-+-------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                 ;
-+---------------------------------------------+---------------+
-; Resource                                    ; Usage         ;
-+---------------------------------------------+---------------+
-; Estimate of Logic utilization (ALMs needed) ; 0             ;
-;                                             ;               ;
-; Combinational ALUT usage for logic          ; 0             ;
-;     -- 7 input functions                    ; 0             ;
-;     -- 6 input functions                    ; 0             ;
-;     -- 5 input functions                    ; 0             ;
-;     -- 4 input functions                    ; 0             ;
-;     -- <=3 input functions                  ; 0             ;
-;                                             ;               ;
-; Dedicated logic registers                   ; 0             ;
-;                                             ;               ;
-; I/O pins                                    ; 6             ;
-;                                             ;               ;
-; Total DSP Blocks                            ; 1             ;
-;                                             ;               ;
-; Maximum fan-out node                        ; ALU:M3|MUL[0] ;
-; Maximum fan-out                             ; 4             ;
-; Total fan-out                               ; 11            ;
-; Average fan-out                             ; 0.85          ;
-+---------------------------------------------+---------------+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimate of Logic utilization (ALMs needed) ; 0              ;
+;                                             ;                ;
+; Combinational ALUT usage for logic          ; 0              ;
+;     -- 7 input functions                    ; 0              ;
+;     -- 6 input functions                    ; 0              ;
+;     -- 5 input functions                    ; 0              ;
+;     -- 4 input functions                    ; 0              ;
+;     -- <=3 input functions                  ; 0              ;
+;                                             ;                ;
+; Dedicated logic registers                   ; 0              ;
+;                                             ;                ;
+; I/O pins                                    ; 6              ;
+;                                             ;                ;
+; Total DSP Blocks                            ; 0              ;
+;                                             ;                ;
+; Maximum fan-out node                        ; LEDR[0]~output ;
+; Maximum fan-out                             ; 1              ;
+; Total fan-out                               ; 7              ;
+; Average fan-out                             ; 0.58           ;
++---------------------------------------------+----------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -216,22 +215,9 @@ on the Quartus Prime software download page.
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
-; |top                       ; 0 (0)               ; 0 (0)                     ; 0                 ; 1          ; 6    ; 0            ; |top                ; top         ; work         ;
-;    |ALU:M3|                ; 0 (0)               ; 0 (0)                     ; 0                 ; 1          ; 0    ; 0            ; |top|ALU:M3         ; ALU         ; work         ;
+; |top                       ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 6    ; 0            ; |top                ; top         ; work         ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+-----------------------------------------------+
-; Analysis & Synthesis DSP Block Usage Summary  ;
-+---------------------------------+-------------+
-; Statistic                       ; Number Used ;
-+---------------------------------+-------------+
-; Independent 9x9                 ; 1           ;
-; Total number of DSP blocks      ; 1           ;
-;                                 ;             ;
-; Fixed Point Unsigned Multiplier ; 1           ;
-+---------------------------------+-------------+
 
 
 +--------------------------------------------------------------------------------+
@@ -239,8 +225,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------+----------------------------------------+
 ; Register name                         ; Reason for Removal                     ;
 +---------------------------------------+----------------------------------------+
-; flip_flop:M2|Q[0..3]                  ; Stuck at GND due to stuck port data_in ;
-; flip_flop:M1|Q[0..3]                  ; Stuck at GND due to stuck port data_in ;
+; flip_flop:M2|Q[0..3]                  ; Lost fanout                            ;
+; flip_flop:M1|Q[0,2,3]                 ; Stuck at GND due to stuck port data_in ;
+; flip_flop:M1|Q[1]                     ; Stuck at VCC due to stuck port data_in ;
 ; Total Number of Removed Registers = 8 ;                                        ;
 +---------------------------------------+----------------------------------------+
 
@@ -260,13 +247,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
-+----------------------------------------+
-; Port Connectivity Checks: "MUX8A1:M4"  ;
-+------+-------+----------+--------------+
-; Port ; Type  ; Severity ; Details      ;
-+------+-------+----------+--------------+
-; S    ; Input ; Info     ; Stuck at VCC ;
-+------+-------+----------+--------------+
++-------------------------------------------+
+; Port Connectivity Checks: "MUX8A1:M4"     ;
++---------+-------+----------+--------------+
+; Port    ; Type  ; Severity ; Details      ;
++---------+-------+----------+--------------+
+; S[2..1] ; Input ; Info     ; Stuck at VCC ;
+; S[0]    ; Input ; Info     ; Stuck at GND ;
++---------+-------+----------+--------------+
 
 
 +-------------------------------------------+
@@ -280,28 +268,32 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------+-------+----------+--------------+
 
 
-+-------------------------------------------+
-; Port Connectivity Checks: "flip_flop:M1"  ;
-+---------+-------+----------+--------------+
-; Port    ; Type  ; Severity ; Details      ;
-+---------+-------+----------+--------------+
-; D_in    ; Input ; Info     ; Stuck at GND ;
-; enable  ; Input ; Info     ; Stuck at VCC ;
-; reset_n ; Input ; Info     ; Stuck at VCC ;
-+---------+-------+----------+--------------+
++----------------------------------------------+
+; Port Connectivity Checks: "flip_flop:M1"     ;
++------------+-------+----------+--------------+
+; Port       ; Type  ; Severity ; Details      ;
++------------+-------+----------+--------------+
+; D_in[3..2] ; Input ; Info     ; Stuck at GND ;
+; D_in[1]    ; Input ; Info     ; Stuck at VCC ;
+; D_in[0]    ; Input ; Info     ; Stuck at GND ;
+; enable     ; Input ; Info     ; Stuck at VCC ;
+; reset_n    ; Input ; Info     ; Stuck at VCC ;
++------------+-------+----------+--------------+
 
 
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
-+-------------------+---------------------------------+
-; Type              ; Count                           ;
-+-------------------+---------------------------------+
-; arriav_mac        ; 1                               ;
-; boundary_port     ; 6                               ;
-;                   ;                                 ;
-; Max LUT depth     ; 0.00                            ;
-; Average LUT depth ; 0.00                            ;
-+-------------------+---------------------------------+
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_lcell_comb     ; 2                           ;
+;     normal            ; 2                           ;
+;         0 data inputs ; 2                           ;
+; boundary_port         ; 6                           ;
+;                       ;                             ;
+; Max LUT depth         ; 0.00                        ;
+; Average LUT depth     ; 0.00                        ;
++-----------------------+-----------------------------+
 
 
 +-------------------------------+
@@ -319,7 +311,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
-    Info: Processing started: Wed Aug 26 13:51:57 2026
+    Info: Processing started: Wed Aug 26 14:04:44 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off top -c top
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 14 of the 14 processors detected
@@ -338,16 +330,21 @@ Info (12128): Elaborating entity "flip_flop" for hierarchy "flip_flop:M1" File: 
 Info (12128): Elaborating entity "ALU" for hierarchy "ALU:M3" File: C:/Users/Sebas/Downloads/9no/DVVDS/T2.0/SourceCode/top.v Line: 68
 Info (12128): Elaborating entity "MUX8A1" for hierarchy "MUX8A1:M4" File: C:/Users/Sebas/Downloads/9no/DVVDS/T2.0/SourceCode/top.v Line: 82
 Info (12128): Elaborating entity "MUX2to1" for hierarchy "MUX8A1:M4|MUX2to1:mux0" File: C:/Users/Sebas/Downloads/9no/DVVDS/T2.0/SourceCode/MUX8A1.v Line: 17
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "LEDR[0]" is stuck at GND File: C:/Users/Sebas/Downloads/9no/DVVDS/T2.0/SourceCode/top.v Line: 3
+    Warning (13410): Pin "LEDR[1]" is stuck at VCC File: C:/Users/Sebas/Downloads/9no/DVVDS/T2.0/SourceCode/top.v Line: 3
+    Warning (13410): Pin "LEDR[2]" is stuck at VCC File: C:/Users/Sebas/Downloads/9no/DVVDS/T2.0/SourceCode/top.v Line: 3
+    Warning (13410): Pin "LEDR[3]" is stuck at VCC File: C:/Users/Sebas/Downloads/9no/DVVDS/T2.0/SourceCode/top.v Line: 3
+Info (17049): 4 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 7 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 6 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 1 input pins
     Info (21059): Implemented 5 output pins
-    Info (21062): Implemented 1 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 6 warnings
     Info: Peak virtual memory: 4825 megabytes
-    Info: Processing ended: Wed Aug 26 13:52:03 2026
+    Info: Processing ended: Wed Aug 26 14:04:50 2026
     Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:15
+    Info: Total CPU time (on all processors): 00:00:14
 
 

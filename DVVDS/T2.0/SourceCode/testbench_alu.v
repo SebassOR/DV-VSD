@@ -7,6 +7,7 @@ module testbench_alu;
     reg clk   = 0;
     reg [3:0] a     = 4'b0000;
     reg [3:0] b     = 4'b0000;
+    reg disable_reg = 1'b0;
 
     wire [3:0] out;
 
@@ -14,21 +15,20 @@ module testbench_alu;
     always #2 clk = ~clk;
 
     ALUTOLEVEL DUV (
-        .a(a),
-        .b(b),
-        .clk(clk),
+        .A_in(a),
+        .B_in(b),
+        .clock(clk),
         .reset(reset),
         .selector(sela),
-        .out(out)
+        .out(out),
+        .Disable(disable_reg)
     );
 
     //estimulo
     initial begin
         @(negedge clk);
         reset = 1'b0;      
-        @(negedge clk);
-        a = 4'b0001;
-        b = 4'b0010;
+
         @(negedge clk); sela = 3'b000; // AND
         @(negedge clk); sela = 3'b001; // OR
         @(negedge clk); sela = 3'b010; // NOT

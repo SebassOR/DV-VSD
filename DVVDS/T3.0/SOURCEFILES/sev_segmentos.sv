@@ -3,7 +3,6 @@ module Segments (
 	output logic [6:0] seg
 );
 
-always_comb begin
 	always_comb begin
 		case (num)
 			4'h0: seg = 7'b1000000;
@@ -24,6 +23,6 @@ always_comb begin
 			4'hF: seg = 7'b0001110;
 			default: seg = 7'b1111111;
 		endcase
-end
+	end
 
 endmodule

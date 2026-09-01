@@ -1,5 +1,5 @@
 Analysis & Synthesis report for top
-Mon Aug 31 14:25:35 2026
+Mon Aug 31 16:59:11 2026
 Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
 
 
@@ -15,13 +15,12 @@ Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
   9. Parameter Settings for User Entity Instance: Top-level Entity: |top
- 10. Port Connectivity Checks: "BCD:bcd|BCD_STEP:bcd7"
- 11. Port Connectivity Checks: "BCD:bcd|BCD_STEP:bcd0"
- 12. Port Connectivity Checks: "BCD:bcd"
+ 10. Parameter Settings for User Entity Instance: BCD_Converter:u_bcd
+ 11. Port Connectivity Checks: "BCD_Converter:u_bcd|stp_BCD:step7"
+ 12. Port Connectivity Checks: "BCD_Converter:u_bcd|stp_BCD:step0"
  13. Post-Synthesis Netlist Statistics for Top Partition
  14. Elapsed Time Per Partition
  15. Analysis & Synthesis Messages
- 16. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -48,7 +47,7 @@ on the Quartus Prime software download page.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +---------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon Aug 31 14:25:34 2026           ;
+; Analysis & Synthesis Status     ; Successful - Mon Aug 31 16:59:11 2026           ;
 ; Quartus Prime Version           ; 25.1std.0 Build 1129 10/21/2025 SC Lite Edition ;
 ; Revision Name                   ; top                                             ;
 ; Top-level Entity Name           ; top                                             ;
@@ -182,31 +181,31 @@ on the Quartus Prime software download page.
 +----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
 
 
-+-------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                       ;
-+---------------------------------------------+---------------------+
-; Resource                                    ; Usage               ;
-+---------------------------------------------+---------------------+
-; Estimate of Logic utilization (ALMs needed) ; 0                   ;
-;                                             ;                     ;
-; Combinational ALUT usage for logic          ; 0                   ;
-;     -- 7 input functions                    ; 0                   ;
-;     -- 6 input functions                    ; 0                   ;
-;     -- 5 input functions                    ; 0                   ;
-;     -- 4 input functions                    ; 0                   ;
-;     -- <=3 input functions                  ; 0                   ;
-;                                             ;                     ;
-; Dedicated logic registers                   ; 0                   ;
-;                                             ;                     ;
-; I/O pins                                    ; 21                  ;
-;                                             ;                     ;
-; Total DSP Blocks                            ; 0                   ;
-;                                             ;                     ;
-; Maximum fan-out node                        ; segments0[0]~output ;
-; Maximum fan-out                             ; 1                   ;
-; Total fan-out                               ; 21                  ;
-; Average fan-out                             ; 0.50                ;
-+---------------------------------------------+---------------------+
++---------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                               ;
++---------------------------------------------+-----------------------------+
+; Resource                                    ; Usage                       ;
++---------------------------------------------+-----------------------------+
+; Estimate of Logic utilization (ALMs needed) ; 0                           ;
+;                                             ;                             ;
+; Combinational ALUT usage for logic          ; 0                           ;
+;     -- 7 input functions                    ; 0                           ;
+;     -- 6 input functions                    ; 0                           ;
+;     -- 5 input functions                    ; 0                           ;
+;     -- 4 input functions                    ; 0                           ;
+;     -- <=3 input functions                  ; 0                           ;
+;                                             ;                             ;
+; Dedicated logic registers                   ; 0                           ;
+;                                             ;                             ;
+; I/O pins                                    ; 21                          ;
+;                                             ;                             ;
+; Total DSP Blocks                            ; 0                           ;
+;                                             ;                             ;
+; Maximum fan-out node                        ; segments_hundreds[0]~output ;
+; Maximum fan-out                             ; 1                           ;
+; Total fan-out                               ; 21                          ;
+; Average fan-out                             ; 0.50                        ;
++---------------------------------------------+-----------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -239,36 +238,37 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+----------+-----------------------------------------+
 ; Parameter Name ; Value    ; Type                                    ;
 +----------------+----------+-----------------------------------------+
-; BINARY         ; 11111111 ; Unsigned Binary                         ;
+; bin            ; 00000000 ; Unsigned Binary                         ;
 +----------------+----------+-----------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "BCD:bcd|BCD_STEP:bcd7"                                                                       ;
-+---------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port          ; Type   ; Severity ; Details                                                                             ;
-+---------------+--------+----------+-------------------------------------------------------------------------------------+
-; stepOut[7..0] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+---------------+--------+----------+-------------------------------------------------------------------------------------+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BCD_Converter:u_bcd ;
++----------------+----------+--------------------------------------+
+; Parameter Name ; Value    ; Type                                 ;
++----------------+----------+--------------------------------------+
+; bin            ; 00000000 ; Unsigned Binary                      ;
++----------------+----------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+---------------------------------------------------+
-; Port Connectivity Checks: "BCD:bcd|BCD_STEP:bcd0" ;
-+---------------+-------+----------+----------------+
-; Port          ; Type  ; Severity ; Details        ;
-+---------------+-------+----------+----------------+
-; stepIn[19..8] ; Input ; Info     ; Stuck at GND   ;
-+---------------+-------+----------+----------------+
++----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "BCD_Converter:u_bcd|stp_BCD:step7"                                                        ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                             ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; OUTs[7..0] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+------------------------------------------+
-; Port Connectivity Checks: "BCD:bcd"      ;
-+--------+-------+----------+--------------+
-; Port   ; Type  ; Severity ; Details      ;
-+--------+-------+----------+--------------+
-; binary ; Input ; Info     ; Stuck at VCC ;
-+--------+-------+----------+--------------+
++---------------------------------------------------------------+
+; Port Connectivity Checks: "BCD_Converter:u_bcd|stp_BCD:step0" ;
++------+-------+----------+-------------------------------------+
+; Port ; Type  ; Severity ; Details                             ;
++------+-------+----------+-------------------------------------+
+; INs  ; Input ; Info     ; Stuck at GND                        ;
++------+-------+----------+-------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -301,44 +301,43 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
-    Info: Processing started: Mon Aug 31 14:25:28 2026
+    Info: Processing started: Mon Aug 31 16:59:04 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off top -c top
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 14 of the 14 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file /users/sebas/downloads/iteso/9no/dvvds/t3.0/sourcefiles/top.sv
     Info (12023): Found entity 1: top File: C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T3.0/SOURCEFILES/top.sv Line: 1
 Info (12021): Found 2 design units, including 2 entities, in source file /users/sebas/downloads/iteso/9no/dvvds/t3.0/sourcefiles/bcd.sv
-    Info (12023): Found entity 1: BCD File: C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T3.0/SOURCEFILES/BCD.sv Line: 1
-    Info (12023): Found entity 2: BCD_STEP File: C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T3.0/SOURCEFILES/BCD.sv Line: 26
+    Info (12023): Found entity 1: BCD_Converter File: C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T3.0/SOURCEFILES/BCD.sv Line: 1
+    Info (12023): Found entity 2: stp_BCD File: C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T3.0/SOURCEFILES/BCD.sv Line: 45
 Info (12021): Found 1 design units, including 1 entities, in source file /users/sebas/downloads/iteso/9no/dvvds/t3.0/sourcefiles/sev_segmentos.sv
     Info (12023): Found entity 1: Segments File: C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T3.0/SOURCEFILES/sev_segmentos.sv Line: 1
 Info (12127): Elaborating entity "top" for the top level hierarchy
-Info (12128): Elaborating entity "BCD" for hierarchy "BCD:bcd" File: C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T3.0/SOURCEFILES/top.sv Line: 17
-Info (12128): Elaborating entity "BCD_STEP" for hierarchy "BCD:bcd|BCD_STEP:bcd0" File: C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T3.0/SOURCEFILES/BCD.sv Line: 11
-Info (12128): Elaborating entity "Segments" for hierarchy "Segments:segs0" File: C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T3.0/SOURCEFILES/top.sv Line: 18
+Info (12128): Elaborating entity "BCD_Converter" for hierarchy "BCD_Converter:u_bcd" File: C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T3.0/SOURCEFILES/top.sv Line: 21
+Info (12128): Elaborating entity "stp_BCD" for hierarchy "BCD_Converter:u_bcd|stp_BCD:step0" File: C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T3.0/SOURCEFILES/BCD.sv Line: 16
+Info (12128): Elaborating entity "Segments" for hierarchy "Segments:u_seg_units" File: C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T3.0/SOURCEFILES/top.sv Line: 25
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "segments0[0]" is stuck at GND File: C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T3.0/SOURCEFILES/top.sv Line: 10
-    Warning (13410): Pin "segments0[1]" is stuck at GND File: C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T3.0/SOURCEFILES/top.sv Line: 10
-    Warning (13410): Pin "segments0[2]" is stuck at VCC File: C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T3.0/SOURCEFILES/top.sv Line: 10
-    Warning (13410): Pin "segments0[3]" is stuck at GND File: C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T3.0/SOURCEFILES/top.sv Line: 10
-    Warning (13410): Pin "segments0[4]" is stuck at GND File: C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T3.0/SOURCEFILES/top.sv Line: 10
-    Warning (13410): Pin "segments0[5]" is stuck at VCC File: C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T3.0/SOURCEFILES/top.sv Line: 10
-    Warning (13410): Pin "segments0[6]" is stuck at GND File: C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T3.0/SOURCEFILES/top.sv Line: 10
-    Warning (13410): Pin "segments1[0]" is stuck at GND File: C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T3.0/SOURCEFILES/top.sv Line: 11
-    Warning (13410): Pin "segments1[1]" is stuck at VCC File: C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T3.0/SOURCEFILES/top.sv Line: 11
-    Warning (13410): Pin "segments1[2]" is stuck at GND File: C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T3.0/SOURCEFILES/top.sv Line: 11
-    Warning (13410): Pin "segments1[3]" is stuck at GND File: C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T3.0/SOURCEFILES/top.sv Line: 11
-    Warning (13410): Pin "segments1[4]" is stuck at VCC File: C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T3.0/SOURCEFILES/top.sv Line: 11
-    Warning (13410): Pin "segments1[5]" is stuck at GND File: C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T3.0/SOURCEFILES/top.sv Line: 11
-    Warning (13410): Pin "segments1[6]" is stuck at GND File: C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T3.0/SOURCEFILES/top.sv Line: 11
-    Warning (13410): Pin "segments2[0]" is stuck at GND File: C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T3.0/SOURCEFILES/top.sv Line: 13
-    Warning (13410): Pin "segments2[1]" is stuck at VCC File: C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T3.0/SOURCEFILES/top.sv Line: 13
-    Warning (13410): Pin "segments2[2]" is stuck at GND File: C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T3.0/SOURCEFILES/top.sv Line: 13
-    Warning (13410): Pin "segments2[3]" is stuck at GND File: C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T3.0/SOURCEFILES/top.sv Line: 13
-    Warning (13410): Pin "segments2[4]" is stuck at VCC File: C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T3.0/SOURCEFILES/top.sv Line: 13
-    Warning (13410): Pin "segments2[5]" is stuck at GND File: C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T3.0/SOURCEFILES/top.sv Line: 13
-    Warning (13410): Pin "segments2[6]" is stuck at GND File: C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T3.0/SOURCEFILES/top.sv Line: 13
-Info (144001): Generated suppressed messages file C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T3.0/QUARTUS/output_files/top.map.smsg
+    Warning (13410): Pin "segments_hundreds[0]" is stuck at GND File: C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T3.0/SOURCEFILES/top.sv Line: 9
+    Warning (13410): Pin "segments_hundreds[1]" is stuck at GND File: C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T3.0/SOURCEFILES/top.sv Line: 9
+    Warning (13410): Pin "segments_hundreds[2]" is stuck at GND File: C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T3.0/SOURCEFILES/top.sv Line: 9
+    Warning (13410): Pin "segments_hundreds[3]" is stuck at GND File: C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T3.0/SOURCEFILES/top.sv Line: 9
+    Warning (13410): Pin "segments_hundreds[4]" is stuck at GND File: C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T3.0/SOURCEFILES/top.sv Line: 9
+    Warning (13410): Pin "segments_hundreds[5]" is stuck at GND File: C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T3.0/SOURCEFILES/top.sv Line: 9
+    Warning (13410): Pin "segments_hundreds[6]" is stuck at VCC File: C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T3.0/SOURCEFILES/top.sv Line: 9
+    Warning (13410): Pin "segments_tens[0]" is stuck at GND File: C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T3.0/SOURCEFILES/top.sv Line: 10
+    Warning (13410): Pin "segments_tens[1]" is stuck at GND File: C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T3.0/SOURCEFILES/top.sv Line: 10
+    Warning (13410): Pin "segments_tens[2]" is stuck at GND File: C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T3.0/SOURCEFILES/top.sv Line: 10
+    Warning (13410): Pin "segments_tens[3]" is stuck at GND File: C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T3.0/SOURCEFILES/top.sv Line: 10
+    Warning (13410): Pin "segments_tens[4]" is stuck at GND File: C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T3.0/SOURCEFILES/top.sv Line: 10
+    Warning (13410): Pin "segments_tens[5]" is stuck at GND File: C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T3.0/SOURCEFILES/top.sv Line: 10
+    Warning (13410): Pin "segments_tens[6]" is stuck at VCC File: C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T3.0/SOURCEFILES/top.sv Line: 10
+    Warning (13410): Pin "segments_units[0]" is stuck at GND File: C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T3.0/SOURCEFILES/top.sv Line: 12
+    Warning (13410): Pin "segments_units[1]" is stuck at GND File: C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T3.0/SOURCEFILES/top.sv Line: 12
+    Warning (13410): Pin "segments_units[2]" is stuck at GND File: C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T3.0/SOURCEFILES/top.sv Line: 12
+    Warning (13410): Pin "segments_units[3]" is stuck at GND File: C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T3.0/SOURCEFILES/top.sv Line: 12
+    Warning (13410): Pin "segments_units[4]" is stuck at GND File: C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T3.0/SOURCEFILES/top.sv Line: 12
+    Warning (13410): Pin "segments_units[5]" is stuck at GND File: C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T3.0/SOURCEFILES/top.sv Line: 12
+    Warning (13410): Pin "segments_units[6]" is stuck at VCC File: C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T3.0/SOURCEFILES/top.sv Line: 12
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Info (21057): Implemented 21 device resources after synthesis - the final resource count might be different
@@ -346,14 +345,8 @@ Info (21057): Implemented 21 device resources after synthesis - the final resour
     Info (21059): Implemented 21 output pins
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 23 warnings
     Info: Peak virtual memory: 4825 megabytes
-    Info: Processing ended: Mon Aug 31 14:25:35 2026
+    Info: Processing ended: Mon Aug 31 16:59:11 2026
     Info: Elapsed time: 00:00:07
     Info: Total CPU time (on all processors): 00:00:17
-
-
-+------------------------------------------+
-; Analysis & Synthesis Suppressed Messages ;
-+------------------------------------------+
-The suppressed messages can be found in C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T3.0/QUARTUS/output_files/top.map.smsg.
 
 

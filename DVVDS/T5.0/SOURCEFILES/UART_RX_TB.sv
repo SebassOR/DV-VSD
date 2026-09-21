@@ -85,4 +85,26 @@ initial begin
         $finish;
     end
 
+ initial begin
+        forever begin
+            @(posedge clk);
+            if (received) begin
+                exp_data = expected_data_q.pop_front();
+                exp_err  = expected_error_q.pop_front();
+
+                if (rx_data !== exp_data) begin
+                    $display("FAIL: expected data 0x%0h, got 0x%0h", exp_data, rx_data);
+                    errors++;
+                end else begin
+                    $display("PASS: received 0x%0h correctly", rx_data);
+                end
+
+                if (parity_error !== exp_err) begin
+                    $display("FAIL: expected parity_error=%0b, got %0b", exp_err, parity_error);
+                    errors++;
+                end
+            end
+        end
+    end
+    
 endmodule

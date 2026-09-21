@@ -51,7 +51,9 @@ task automatic send_byte(input logic [7:0] data, input string parity_kind);
 
 task automatic send_and_expect(input logic [7:0] data, input string parity_kind,
                                     input logic expect_err);
-    
+    expected_data_q.push_back(data);
+    expected_error_q.push_back(expect_err);
+    send_byte(data, parity_kind);
         
 endtask
 

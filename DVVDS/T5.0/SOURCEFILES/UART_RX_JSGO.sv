@@ -1,5 +1,6 @@
 module uart_rx #(
     parameter int    CLKS_PER_BIT = 5,      
+    parameter string PARITY_MODE  = "NONE"
 ) (
     input  logic       clk,
     input  logic       rst,           
@@ -61,7 +62,19 @@ always_ff @(posedge clk) begin
                     end
                 end
                 S_DATA: begin
-                    
+                    if (clk_count < CLKS_PER_BIT-1) begin
+                        clk_count <= clk_count + 1'b1;
+                    end else begin
+                        clk_count <= '0;
+                        rx_shift  <= {rx_bit, rx_shift[7:1]};
+
+                        if (bit_index < 3'd7) begin
+                            bit_index <= bit_index + 1'b1;
+                        end else begin
+                            bit_index <= '0;
+                            state <= (PARITY_MODE == "NONE") ? S_STOP : S_PARITY;
+                        end
+                    end
                 end
                 S_PARITY: begin
                     

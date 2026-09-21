@@ -2,7 +2,6 @@
 
 module uart_rx_tb;
     localparam int    TB_CLKS_PER_BIT = 5;
-    localparam string TB_PARITY_MODE  = "EVEN"; 
     logic       clk = 0;
     logic       rst;
     logic       rx = 1'b1; 
@@ -65,5 +64,25 @@ task automatic send_and_expect(input logic [7:0] data, input string parity_kind,
     send_byte(data, parity_kind);
         
 endtask
+
+initial begin
+        rst = 1'b1;
+        repeat (3) @(posedge clk);
+        rst = 1'b0;
+        @(posedge clk);
+        send_and_expect(8'b00000000, "EVEN", 1'b0);
+        send_and_expect(8'b01010001, "EVEN", 1'b0);
+        send_and_expect(8'b01101001, "EVEN", 1'b0);
+        send_and_expect(8'b01111111, "EVEN", 1'b0);
+        send_and_expect(8'b01010001, "ODD",  1'b1);
+        repeat (20) @(posedge clk);
+
+        if (errors == 0)
+            $display("\nALL TESTS PASSED \n");
+        else
+            $display("\n%0d TEST(S) FAILED\n", errors);
+
+        $finish;
+    end
 
 endmodule

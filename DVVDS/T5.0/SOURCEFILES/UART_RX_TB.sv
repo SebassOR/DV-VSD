@@ -23,10 +23,29 @@ module uart_rx_tb;
         .parity_error (parity_error)
     );
 task automatic send_byte(input logic [7:0] data, input string parity_kind);
-        int i;
+       int i;
         logic p;
         begin
-    
+            // start bit
+            rx = 1'b0;
+            repeat (TB_CLKS_PER_BIT) @(posedge clk);
+            // 8 data bits,
+            for (i = 0; i < 8; i++) begin
+                rx = data[i];
+                repeat (TB_CLKS_PER_BIT) @(posedge clk);
+            end
+            // parity bit
+            p = ^data; 
+            if (parity_kind == "EVEN")
+                rx = p;        
+            else if (parity_kind == "ODD")
+                rx = ~p;       
+            else
+                rx = 1'b1;    
+            repeat (TB_CLKS_PER_BIT) @(posedge clk);
+            // 2 stop bits
+            rx = 1'b1;
+            repeat (2*TB_CLKS_PER_BIT) @(posedge clk);
         end
     endtask
 

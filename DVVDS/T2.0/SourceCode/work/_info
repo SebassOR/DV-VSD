@@ -1,0 +1,147 @@
+m255
+K4
+z2
+!s12c _opt
+Z0 !s99 nomlopt
+!s11f vlog 2025.2 2025.05, May 31 2025
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/Sebas/AppData/Local/quartus
+T_opt
+!i145 1
+!i144 0
+!s110 1787799041
+VRU7GW:GJd[T=1Zlkjc=DG0
+04 3 4 work top fast 0
+=1-3ce9f7d11299-6a8fa600-1b4-6ae8
+R0
+!s12f OEM100
+!s12b OEM100
+!s124 OEM10U12 
+!s135 nogc
+o-quiet -auto_acc_if_foreign -work work +acc
+tCvgOpt 0 defaultOptions 1107585188
+n@_opt
+OL;O;2025.2;82
+vALU
+2C:/Users/Sebas/Downloads/9no/DVVDS/T2.0/SourceCode/ALU.v
+Z1 !s110 1787799018
+!i10b 1
+!s100 PZcVbU5JJm?3][[S;@<Ke3
+I<jj<`?mP5=el<9nX5OF3A2
+Z2 dC:/Users/Sebas/Downloads/9no/DVVDS/T2.0/SourceCode
+w1787725985
+8C:/Users/Sebas/Downloads/9no/DVVDS/T2.0/SourceCode/ALU.v
+FC:/Users/Sebas/Downloads/9no/DVVDS/T2.0/SourceCode/ALU.v
+!i122 3
+L0 1 25
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+Z4 OL;L;2025.2;82
+r1
+!s85 0
+31
+Z5 !s108 1787799018.000000
+!s107 C:/Users/Sebas/Downloads/9no/DVVDS/T2.0/SourceCode/ALU.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/Sebas/Downloads/9no/DVVDS/T2.0/SourceCode/ALU.v|
+!i113 0
+Z6 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z7 tCvgOpt 0 defaultOptions 1085333592
+n@a@l@u
+vflip_flop
+2C:/Users/Sebas/Downloads/9no/DVVDS/T2.0/SourceCode/flip_flop.v
+R1
+!i10b 1
+!s100 m2KnDNnAi7oGH;gJJ4HMO1
+Ik3Q_5<dSjRIJ0k`P0CAIV0
+R2
+w1787725984
+8C:/Users/Sebas/Downloads/9no/DVVDS/T2.0/SourceCode/flip_flop.v
+FC:/Users/Sebas/Downloads/9no/DVVDS/T2.0/SourceCode/flip_flop.v
+!i122 4
+L0 1 29
+R3
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/Sebas/Downloads/9no/DVVDS/T2.0/SourceCode/flip_flop.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/Sebas/Downloads/9no/DVVDS/T2.0/SourceCode/flip_flop.v|
+!i113 0
+R6
+R7
+vMUX2to1
+2C:/Users/Sebas/Downloads/9no/DVVDS/T2.0/SourceCode/MUX2to1.v
+R1
+!i10b 1
+!s100 JK4=h30KABdI>SEXzNI4D1
+IFGYg7kCRcM9kzO_zVkhT?2
+R2
+w1787772895
+8C:/Users/Sebas/Downloads/9no/DVVDS/T2.0/SourceCode/MUX2to1.v
+FC:/Users/Sebas/Downloads/9no/DVVDS/T2.0/SourceCode/MUX2to1.v
+!i122 1
+L0 1 8
+R3
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/Sebas/Downloads/9no/DVVDS/T2.0/SourceCode/MUX2to1.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/Sebas/Downloads/9no/DVVDS/T2.0/SourceCode/MUX2to1.v|
+!i113 0
+R6
+R7
+n@m@u@x2to1
+vMUX8A1
+2C:/Users/Sebas/Downloads/9no/DVVDS/T2.0/SourceCode/MUX8A1.v
+R1
+!i10b 1
+!s100 eJXge_5<;73:i4ccdRRzg3
+IkO4m9:T;S_]W_;>aCXeje1
+R2
+w1787772543
+8C:/Users/Sebas/Downloads/9no/DVVDS/T2.0/SourceCode/MUX8A1.v
+FC:/Users/Sebas/Downloads/9no/DVVDS/T2.0/SourceCode/MUX8A1.v
+!i122 2
+L0 1 63
+R3
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/Sebas/Downloads/9no/DVVDS/T2.0/SourceCode/MUX8A1.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/Sebas/Downloads/9no/DVVDS/T2.0/SourceCode/MUX8A1.v|
+!i113 0
+R6
+R7
+n@m@u@x8@a1
+vtop
+2C:/Users/Sebas/Downloads/9no/DVVDS/T2.0/SourceCode/top.v
+!s110 1787799017
+!i10b 1
+!s100 QH:?e6JglR_]TACE0MP>;0
+IVT<6RN`NT^=Q2eSJgohTA0
+R2
+w1787774666
+8C:/Users/Sebas/Downloads/9no/DVVDS/T2.0/SourceCode/top.v
+FC:/Users/Sebas/Downloads/9no/DVVDS/T2.0/SourceCode/top.v
+!i122 0
+L0 1 85
+R3
+R4
+r1
+!s85 0
+31
+!s108 1787799017.000000
+!s107 C:/Users/Sebas/Downloads/9no/DVVDS/T2.0/SourceCode/top.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/Sebas/Downloads/9no/DVVDS/T2.0/SourceCode/top.v|
+!i113 0
+R6
+R7

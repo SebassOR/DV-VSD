@@ -18,3 +18,13 @@ module uart_rx #(
         S_STOP,
         S_CLEANUP
     } state_t;
+
+always_ff @(posedge clk) begin
+        if (rst) begin
+            rx_sync0 <= 1'b1;
+            rx_sync1 <= 1'b1;
+        end else begin
+            rx_sync0 <= rx;
+            rx_sync1 <= rx_sync0;
+        end
+    end

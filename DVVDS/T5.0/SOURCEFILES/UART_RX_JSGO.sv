@@ -28,3 +28,39 @@ always_ff @(posedge clk) begin
             rx_sync1 <= rx_sync0;
         end
     end
+
+always_ff @(posedge clk) begin
+        if (rst) begin
+            state        <= S_IDLE;
+            clk_count  <= '0;
+            bit_index <= '0;
+            rx_shift   <= '0;
+            rx_data   <= '0;
+            received <= 1'b0;
+            parity_error <= 1'b0;
+        end else begin
+            received     <= 1'b0;
+            case (state)
+
+                S_IDLE: begin
+                    
+                end
+                S_START: begin
+                   
+                end
+                S_DATA: begin
+                    
+                end
+                S_PARITY: begin
+                    
+                end
+                S_STOP: begin
+                  
+                end
+                S_CLEANUP: begin
+                    
+                end
+                endcase
+        end
+end
+endmodule

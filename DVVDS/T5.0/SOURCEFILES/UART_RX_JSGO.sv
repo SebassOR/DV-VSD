@@ -20,6 +20,10 @@ module uart_rx #(
         S_CLEANUP
     } state_t;
 
+
+ logic rx_sync0, rx_sync1;
+ wire  rx_bit = rx_sync1;
+
 always_ff @(posedge clk) begin
         if (rst) begin
             rx_sync0 <= 1'b1;
@@ -101,6 +105,7 @@ always_ff @(posedge clk) begin
                     received <= 1'b1;   
                     state    <= S_IDLE; 
                 end
+                default: state <= S_IDLE;
                 endcase
         end
 end

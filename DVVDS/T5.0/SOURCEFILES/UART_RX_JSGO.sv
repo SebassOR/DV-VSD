@@ -19,6 +19,7 @@ module uart_rx #(
         S_STOP,
         S_CLEANUP
     } state_t;
+state_t state, next_state; 
 localparam int CNT_W = (CLKS_PER_BIT <= 1) ? 1 : $clog2(CLKS_PER_BIT);
 logic [CNT_W-1:0] clk_count;   
 logic [2:0]       bit_index;   

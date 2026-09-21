@@ -80,10 +80,17 @@ always_ff @(posedge clk) begin
                     
                 end
                 S_STOP: begin
-                  
+                  if (clk_count < CLKS_PER_BIT-1) begin
+                        clk_count <= clk_count + 1'b1;
+                    end else begin
+                        clk_count <= '0;
+                        rx_data <= rx_shift;
+                        state  <= S_CLEANUP;
+                    end
                 end
                 S_CLEANUP: begin
-                    
+                    received <= 1'b1;   
+                    state    <= S_IDLE; 
                 end
                 endcase
         end

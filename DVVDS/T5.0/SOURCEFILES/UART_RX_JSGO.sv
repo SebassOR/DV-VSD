@@ -77,7 +77,16 @@ always_ff @(posedge clk) begin
                     end
                 end
                 S_PARITY: begin
-                    
+                if (clk_count < CLKS_PER_BIT-1) begin
+                        clk_count <= clk_count + 1'b1;
+                    end else begin
+                        clk_count <= '0;
+                        if (PARITY_MODE == "EVEN")
+                            parity_error <= (^{rx_shift, rx_bit}) != 1'b0;
+                        else 
+                            parity_error <= (^{rx_shift, rx_bit}) != 1'b1;
+                        state <= S_STOP;
+                    end    
                 end
                 S_STOP: begin
                   if (clk_count < CLKS_PER_BIT-1) begin

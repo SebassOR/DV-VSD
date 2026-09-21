@@ -22,6 +22,18 @@ module uart_rx_tb;
         .received     (received),
         .parity_error (parity_error)
     );
+task automatic send_byte(input logic [7:0] data, input string parity_kind);
+        int i;
+        logic p;
+        begin
+    
+        end
+    endtask
 
+task automatic send_and_expect(input logic [7:0] data, input string parity_kind,
+                                    input logic expect_err);
+    
+        
+endtask
 
 endmodule

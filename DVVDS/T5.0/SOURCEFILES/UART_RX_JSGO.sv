@@ -43,10 +43,22 @@ always_ff @(posedge clk) begin
             case (state)
 
                 S_IDLE: begin
-                    
+                       clk_count <= '0;
+                    bit_index <= '0;
+                    if (rx_bit == 1'b0)      
+                        state <= S_START;
                 end
                 S_START: begin
-                   
+                   if (clk_count == (CLKS_PER_BIT-1)/2) begin
+                        if (rx_bit == 1'b0) begin
+                            clk_count <= '0;
+                            state     <= S_DATA;
+                        end else begin
+                            state <= S_IDLE;  
+                        end
+                    end else begin
+                        clk_count <= clk_count + 1'b1;
+                    end
                 end
                 S_DATA: begin
                     

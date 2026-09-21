@@ -9,9 +9,12 @@ module uart_rx_tb;
     logic [7:0] rx_data;
     logic       received;
     logic       parity_error;
-
-
-     uart_rx #(
+    int errors = 0;
+    
+    
+    always #5 clk = ~clk;
+    
+    uart_rx #(
         .CLKS_PER_BIT(TB_CLKS_PER_BIT),
         .PARITY_MODE("EVEN")
     ) dut (
@@ -22,6 +25,12 @@ module uart_rx_tb;
         .received     (received),
         .parity_error (parity_error)
     );
+
+logic [7:0] expected_data_q  [$];
+logic       expected_error_q [$];
+logic [7:0] exp_data;
+logic       exp_err;
+
 task automatic send_byte(input logic [7:0] data, input string parity_kind);
        int i;
         logic p;

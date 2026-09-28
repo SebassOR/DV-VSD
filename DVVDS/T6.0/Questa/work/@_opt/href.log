@@ -1,0 +1,8 @@
+BEGIN 3:uart_if:fast__1:work
+    rst :  1:uart_wrapper:fast:work
+    rx_data :  1:uart_wrapper:fast:work 1:tb_uart_rx:fast:work
+    parity_error :  1:uart_wrapper:fast:work 1:tb_uart_rx:fast:work
+    clk :  1:uart_wrapper:fast:work
+    rx :  1:uart_wrapper:fast:work 1:tb_uart_rx:fast:work
+    received :  1:uart_wrapper:fast:work 1:tb_uart_rx:fast:work
+END 

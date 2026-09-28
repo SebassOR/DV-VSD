@@ -1,0 +1,61 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "led_data[0]",
+					"strict" : false
+				},
+				{
+					"name" : "led_data[1]",
+					"strict" : false
+				},
+				{
+					"name" : "led_data[2]",
+					"strict" : false
+				},
+				{
+					"name" : "led_data[3]",
+					"strict" : false
+				},
+				{
+					"name" : "led_data[4]",
+					"strict" : false
+				},
+				{
+					"name" : "led_data[5]",
+					"strict" : false
+				},
+				{
+					"name" : "led_data[6]",
+					"strict" : false
+				},
+				{
+					"name" : "led_data[7]",
+					"strict" : false
+				},
+				{
+					"name" : "led_valid",
+					"strict" : false
+				},
+				{
+					"name" : "led_error",
+					"strict" : false
+				},
+				{
+					"name" : "clk_50mhz",
+					"strict" : false
+				},
+				{
+					"name" : "btn_rst",
+					"strict" : false
+				},
+				{
+					"name" : "rx_pin",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

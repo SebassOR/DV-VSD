@@ -1,0 +1,48 @@
+module uart_rx_top (
+    input  logic       clk_100mhz,  // Reloj principal del sistema (ej. 100 MHz de la FPGA)
+    input  logic       btn_rst,     // Botón físico para Reset (Activo en alto)
+    input  logic       rx_pin,      // Pin físico Rx conectado a tu cable serial / FTDI
+    
+    output logic [7:0] led_data,    // 8 LEDs físicos para mostrar el byte recibido
+    output logic       led_valid,   // 1 LED que parpadea/enciende cuando llega un dato nuevo
+    output logic       led_error    // 1 LED que se enciende si hay error de paridad
+);
+
+    // Cables internos para conectar las salidas del UART RX hacia los LEDs
+    logic [7:0] rx_data_out;
+    logic       rx_received_out;
+    logic       rx_parity_err_out;
+
+    // Instancia de tu módulo UART RX
+    // Aquí puedes sobreescribir los parámetros según lo que necesite tu tarjeta
+    uart_rx #(
+        .CLKS_PER_BIT(5),        // Ajustar según tu Baudrate real y Frecuencia de reloj
+        .PARITY_MODE("ODD")      // ODD, EVEN, o NONE
+    ) u_uart_rx (
+        .clk(clk_100mhz),
+        .rst(btn_rst),
+        .rx(rx_pin),
+        
+        // Conexión a cables internos
+        .rx_data(rx_data_out),
+        .received(rx_received_out),
+        .parity_error(rx_parity_err_out)
+    );
+
+    // Lógica para mantener los LEDs encendidos con el último dato válido
+    // (Ya que la señal 'received' solo dura 1 ciclo de reloj)
+    always_ff @(posedge clk_100mhz) begin
+        if (btn_rst) begin
+            led_data  <= 8'b0;
+            led_valid <= 1'b0;
+            led_error <= 1'b0;
+        end else if (rx_received_out) begin
+            // Cuando llega un dato nuevo, actualizamos los LEDs físicos
+            led_data  <= rx_data_out;
+            led_error <= rx_parity_err_out;
+            // Invertimos este LED para notar visualmente cada vez que llega un paquete
+            led_valid <= ~led_valid; 
+        end
+    end
+
+endmodule

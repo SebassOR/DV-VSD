@@ -1,0 +1,95 @@
+class UartTransaction;
+    logic [7:0] data;
+    logic       parity_bit;
+
+    function void calc_odd_parity();
+        parity_bit = ~(^data); 
+    endfunction
+endclass
+
+module tb_uart_rx;
+    logic clk;
+    logic rst;
+
+    localparam int CLKS_PER_BIT = 5;
+    localparam string PARITY_MODE = "ODD";
+
+    uart_if vif(.clk(clk), .rst(rst));
+
+    uart_wrapper #(
+        .CLKS_PER_BIT(CLKS_PER_BIT),
+        .PARITY_MODE(PARITY_MODE)
+    ) wrapper_inst (
+        .vif(vif)
+    );
+
+    initial begin
+        clk = 0;
+        forever #5 clk = ~clk; 
+    end
+
+    task send_uart_frame(input UartTransaction tr);
+        vif.rx = 1'b0;
+        repeat(CLKS_PER_BIT) @(posedge clk);
+
+        for (int i = 0; i < 8; i++) begin
+            vif.rx = tr.data[i];
+            repeat(CLKS_PER_BIT) @(posedge clk);
+        end
+
+        vif.rx = tr.parity_bit;
+        repeat(CLKS_PER_BIT) @(posedge clk);
+
+        vif.rx = 1'b1;
+        repeat(CLKS_PER_BIT) @(posedge clk);
+    endtask
+
+    task check_uart_frame(input UartTransaction tr);
+        @(posedge vif.received);
+
+        if (vif.rx_data === tr.data && vif.parity_error === 1'b0) begin
+            $display("=================================================");
+            $display("[PASS] Exito! Datos correctos.");
+            $display("Enviado: %b | Recibido: %b", tr.data, vif.rx_data);
+            $display("=================================================");
+        end else begin
+            $display("=================================================");
+            $display("[FAIL] Error en la recepcion.");
+            $display("Enviado: %b | Recibido: %b | Error Paridad: %b", tr.data, vif.rx_data, vif.parity_error);
+            $display("=================================================");
+        end
+    endtask
+
+    initial begin
+        UartTransaction tr = new();
+
+        vif.rx = 1'b1; 
+        rst = 1;
+        #20;
+        rst = 0;
+        #20;
+
+        $display("\n--- INICIANDO TEST CON PARIDAD IMPAR (ODD) ---");
+
+        tr.data = 8'b01101001; 
+        tr.calc_odd_parity();  
+        
+        fork
+            send_uart_frame(tr);
+            check_uart_frame(tr);
+        join
+        #50;
+
+        tr.data = 8'b01111111; 
+        tr.calc_odd_parity();  
+        
+        fork
+            send_uart_frame(tr);
+            check_uart_frame(tr);
+        join
+        
+        #100;
+        $display("Simulacion Terminada.");
+        $finish;
+    end
+endmodule

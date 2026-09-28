@@ -1,0 +1,19 @@
+module uart_wrapper #(
+    parameter int    CLKS_PER_BIT = 5,
+    parameter string PARITY_MODE  = "ODD"
+)(
+    uart_if vif
+);
+
+    uart_rx #(
+        .CLKS_PER_BIT(CLKS_PER_BIT),
+        .PARITY_MODE(PARITY_MODE)
+    ) dut_rx (
+        .clk(vif.clk),
+        .rst(vif.rst),
+        .rx(vif.rx),
+        .rx_data(vif.rx_data),
+        .received(vif.received),
+        .parity_error(vif.parity_error)
+    );
+endmodule

@@ -1,0 +1,84 @@
+module handshaking(
+    input clkA, // Destination clock
+    input clkB, // Source clock
+    input rst_n,
+    input signal_i,
+    output signal_o
+    output busy_o
+);
+
+always_comb begin
+    if(data_0) begin
+        mux1_o = data_o;
+    end
+    else begin
+        mux1_o = 1'b0;
+    end
+
+always_comb begin
+    if(signal_i) begin
+        mux2_o = mux1_o;        
+    end
+    else begin
+        mux2_o = 1'b1;
+    end
+
+always_ff@(posedge clk, negedge rst_n) begin
+    if(!rst_n) begin
+        {dataff_o} <= 1'b0;
+    end
+    else begin
+        {dataff_o} <= {mux2_o};
+    end
+
+//or
+    assign busy_o = dataff_o ^ data_o;
+end
+endmodule
+
+
+
+module DoubleFlop(
+    input clk, // Destination clock
+    input rst_n,
+    input data_i,
+    output data_o
+);
+
+logic meta_stable_data, clean_data;
+
+always_ff@(posedge clk, negedge rst_n) begin
+    if(!rst_n) begin
+        {clean_data, meta_stable_data} <= 2'b00;
+    end
+    else begin
+        {clean_data, meta_stable_data} <= {meta_stable_data, data_i};
+    end
+end
+
+assign data_o = clean_data;
+
+endmodule
+
+module OneShot(
+    input clk, // Destination clock
+    input rst_n,
+    input data_i,
+    output data_o
+);
+
+logic meta_stable_data, clean_data, delayed_data;
+
+always_ff@(posedge clk, negedge rst_n) begin
+    if(!rst_n) begin
+        {delayed_data, clean_data, meta_stable_data} <= 3'b000;
+    end
+    else begin
+        {delayed_data, clean_data, meta_stable_data} <= {clean_data, meta_stable_data, data_i};
+    end
+end
+
+assign data_o = ~delayed_data & clean_data;
+
+
+endmodule

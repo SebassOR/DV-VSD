@@ -1,8 +1,10 @@
 m255
 K4
 z2
-!s12c _opt1
+!s12c _opt2
 Z0 !s99 nomlopt
+!s12c _opt1
+R0
 !s12c _opt
 R0
 !s11f vlog 2025.2 2025.05, May 31 2025
@@ -42,16 +44,110 @@ R3
 R4
 R5
 R6
-o-quiet -auto_acc_if_foreign -work work +acc
+Z9 o-quiet -auto_acc_if_foreign -work work +acc
 R7
 n@_opt1
 R8
-vtb_uart_rx
-Z9 2C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T6.0/sources files/tb_uart_rx.sv
+R1
+T_opt2
+!i145 1
+!i144 0
+!s110 1791431544
+VnB4n90Cc5m464L<hD3=UX1
+04 10 4 work mediana_tb fast 0
+=1-3ce9f7d11299-6ac71377-2a7-9964
+R0
+R3
+R4
+!s124 OEM10U2 
+R6
+R9
+R7
+n@_opt2
+R8
+R1
+vFF_XOR
+2C:/Users/Sebas/Downloads/ITESO/9no/roberadolf/proyectos_locos_en_equipo/q3/FF_XOR.sv
 Z10 DXx6 sv_std 3 std 0 22 @5XbY]_OacJl=`ToSm<M^0
-DXx4 work 18 tb_uart_rx_sv_unit 0 22 R=4GE`8m@DoC6RD32_]Nb1
-Z11 !s110 1790818362
+!s110 1792464399
+!i10b 1
+!s100 2?Ra:LXOP;6K2j]V512?e2
+I7<ie?RMNkECYNCm8HmhXG0
+S1
+Z11 dC:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T6.0/Questa
+w1792464396
+8C:/Users/Sebas/Downloads/ITESO/9no/roberadolf/proyectos_locos_en_equipo/q3/FF_XOR.sv
+FC:/Users/Sebas/Downloads/ITESO/9no/roberadolf/proyectos_locos_en_equipo/q3/FF_XOR.sv
+!i122 13
+L0 1 14
 Z12 VDg1SIo80bB@j0V0VzS_@n1
+Z13 OL;L;2025.2;82
+r1
+!s85 0
+31
+!s108 1792464399.000000
+!s107 C:/Users/Sebas/Downloads/ITESO/9no/roberadolf/proyectos_locos_en_equipo/q3/FF_XOR.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/Sebas/Downloads/ITESO/9no/roberadolf/proyectos_locos_en_equipo/q3/FF_XOR.sv|
+!i113 0
+Z14 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z15 tCvgOpt 0 defaultOptions 1085333592
+n@f@f_@x@o@r
+vmediana
+2C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/E1/sourcefiles/mediana.sv
+R10
+Z16 !s110 1791431525
+!i10b 1
+!s100 ?LNEYYZJ=?dm9?g<>aXnL1
+IoHVo@]7XG:jnE;maXfRB?1
+S1
+R11
+w1791431451
+8C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/E1/sourcefiles/mediana.sv
+FC:/Users/Sebas/Downloads/ITESO/9no/DVVDS/E1/sourcefiles/mediana.sv
+!i122 11
+L0 1 45
+R12
+R13
+r1
+!s85 0
+31
+Z17 !s108 1791431525.000000
+!s107 C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/E1/sourcefiles/mediana.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/E1/sourcefiles/mediana.sv|
+!i113 0
+R14
+R15
+vmediana_tb
+2C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/E1/sourcefiles/testbenchmed.sv
+R10
+R16
+!i10b 1
+!s100 n;M[`VUY`Y@k<RZb[lQNf3
+I5oO08hYXGoR_Xzh<Q^g@O1
+S1
+R11
+w1791431520
+8C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/E1/sourcefiles/testbenchmed.sv
+FC:/Users/Sebas/Downloads/ITESO/9no/DVVDS/E1/sourcefiles/testbenchmed.sv
+!i122 12
+L0 3 17
+R12
+R13
+r1
+!s85 0
+31
+R17
+!s107 C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/E1/sourcefiles/testbenchmed.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/E1/sourcefiles/testbenchmed.sv|
+!i113 0
+R14
+R15
+vtb_uart_rx
+Z18 2C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T6.0/sources files/tb_uart_rx.sv
+R10
+DXx4 work 18 tb_uart_rx_sv_unit 0 22 R=4GE`8m@DoC6RD32_]Nb1
+Z19 !s110 1790818362
+R12
 r1
 !s85 0
 !i10b 1
@@ -59,24 +155,24 @@ r1
 IYkRFN?IEQgMSJ6`2;khLI2
 !s105 tb_uart_rx_sv_unit
 S1
-Z13 dC:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T6.0/Questa
-Z14 w1790610043
-Z15 8C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T6.0/sources files/tb_uart_rx.sv
-Z16 FC:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T6.0/sources files/tb_uart_rx.sv
+R11
+Z20 w1790610043
+Z21 8C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T6.0/sources files/tb_uart_rx.sv
+Z22 FC:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T6.0/sources files/tb_uart_rx.sv
 !i122 6
 L0 10 86
-Z17 OL;L;2025.2;82
+R13
 31
-Z18 !s108 1790818362.000000
-Z19 !s107 C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T6.0/sources files/tb_uart_rx.sv|
-Z20 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T6.0/sources files/tb_uart_rx.sv|
+Z23 !s108 1790818362.000000
+Z24 !s107 C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T6.0/sources files/tb_uart_rx.sv|
+Z25 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T6.0/sources files/tb_uart_rx.sv|
 !i113 0
-Z21 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-Z22 tCvgOpt 0 defaultOptions 1085333592
+R14
+R15
 Xtb_uart_rx_sv_unit
-R9
+R18
 R10
-R11
+R19
 VR=4GE`8m@DoC6RD32_]Nb1
 r1
 !s85 0
@@ -85,71 +181,45 @@ r1
 IR=4GE`8m@DoC6RD32_]Nb1
 !i103 1
 S1
-R13
-R14
-R15
-R16
-!i122 6
-Z23 L0 1 0
-R17
-31
-R18
-R19
+R11
 R20
-!i113 0
 R21
 R22
+!i122 6
+Z26 L0 1 0
+R13
+31
+R23
+R24
+R25
+!i113 0
+R14
+R15
 Yuart_if
 2C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T6.0/sources files/uart_if.sv
 R10
-R11
+R19
 !i10b 1
 !s100 laQllSz;e<coDX<kMF_JL1
 I70SUMTPbJ`;PbIikfKVgV1
 S1
-R13
+R11
 w1790609982
 8C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T6.0/sources files/uart_if.sv
 FC:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T6.0/sources files/uart_if.sv
 !i122 7
-R23
+R26
 R12
-R17
+R13
 r1
 !s85 0
 31
-R18
+R23
 !s107 C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T6.0/sources files/uart_if.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T6.0/sources files/uart_if.sv|
 !i113 0
-R21
-R22
-vUART_RX
-2C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T6.0/sources files/uart_rx_top.sv
-R10
-R11
-!i10b 1
-!s100 8TK5X>V;go:87FfG_;S;A3
-ISk0;5en6N_c2GNCOFJI_L2
-S1
-R13
-w1790610539
-8C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T6.0/sources files/uart_rx_top.sv
-FC:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T6.0/sources files/uart_rx_top.sv
-!i122 5
-L0 1 21
-R12
-R17
-r1
-!s85 0
-31
-!s108 1790818361.000000
-!s107 C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T6.0/sources files/uart_rx_top.sv|
-!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T6.0/sources files/uart_rx_top.sv|
-!i113 0
-R21
-R22
-n@u@a@r@t_@r@x
+R14
+R15
 vuart_rx
 2C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T6.0/sources files/UART_RX.sv
 R10
@@ -158,14 +228,14 @@ R10
 !s100 O8@kF<VN3A8zzjAC]UU0?2
 I=JXjS`^NFIUo^04WBCH3[1
 S1
-R13
+R11
 w1790609692
 8C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T6.0/sources files/UART_RX.sv
 FC:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T6.0/sources files/UART_RX.sv
 !i122 9
 L0 1 108
 R12
-R17
+R13
 r1
 !s85 0
 31
@@ -173,30 +243,56 @@ r1
 !s107 C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T6.0/sources files/UART_RX.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T6.0/sources files/UART_RX.sv|
 !i113 0
-R21
-R22
+R14
+R15
+vUART_RX
+2C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T6.0/sources files/uart_rx_top.sv
+R10
+R19
+!i10b 1
+!s100 8TK5X>V;go:87FfG_;S;A3
+ISk0;5en6N_c2GNCOFJI_L2
+S1
+R11
+w1790610539
+8C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T6.0/sources files/uart_rx_top.sv
+FC:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T6.0/sources files/uart_rx_top.sv
+!i122 5
+L0 1 21
+R12
+R13
+r1
+!s85 0
+31
+!s108 1790818361.000000
+!s107 C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T6.0/sources files/uart_rx_top.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T6.0/sources files/uart_rx_top.sv|
+!i113 0
+R14
+R15
+n@u@a@r@t_@r@x
 vuart_wrapper
 2C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T6.0/sources files/uart_wrapper.sv
 R10
-R11
+R19
 !i10b 1
 !s100 gY`KiBY`G_hmOXODW_e9A3
 IMlZkf_TzhTfDjXViOLio53
 S1
-R13
+R11
 w1790609725
 8C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T6.0/sources files/uart_wrapper.sv
 FC:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T6.0/sources files/uart_wrapper.sv
 !i122 8
 L0 1 18
 R12
-R17
+R13
 r1
 !s85 0
 31
-R18
+R23
 !s107 C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T6.0/sources files/uart_wrapper.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T6.0/sources files/uart_wrapper.sv|
 !i113 0
-R21
-R22
+R14
+R15

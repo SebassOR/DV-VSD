@@ -1,0 +1,25 @@
+C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T8.0/FIFO_SYNC.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T8.0/FIFO_SYNC.sv
+Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+** Note: (vlog-220) 'C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T8.0/FIFO_SYNC.mpf' is used as the ini file.
+-- Compiling module FIFO_SYNC
+
+Top level modules:
+	FIFO_SYNC
+
+} {} {}} C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T8.0/RAM_SYNC.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T8.0/RAM_SYNC.sv
+Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+** Note: (vlog-220) 'C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T8.0/FIFO_SYNC.mpf' is used as the ini file.
+-- Compiling module RAM_SYNC
+
+Top level modules:
+	RAM_SYNC
+
+} {} {}} C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T8.0/FIFO_SYNC_tb.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T8.0/FIFO_SYNC_tb.sv
+Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+** Note: (vlog-220) 'C:/Users/Sebas/Downloads/ITESO/9no/DVVDS/T8.0/FIFO_SYNC.mpf' is used as the ini file.
+-- Compiling module FIFO_SYNC_tb
+
+Top level modules:
+	FIFO_SYNC_tb
+
+} {} {}}
